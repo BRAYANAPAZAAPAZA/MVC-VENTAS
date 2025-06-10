@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+
+{% block title %}PRODUCTOS | EDIT {% endblock %}
+
+{% block content %}
+<h1>Actualizacion de Producto</h1>
+<form action="{{ url_for('producto.edit', id=producto.id)}}" method="POST">
+    <div class="mb-3">
+        <label for="" class="form-label">Descripcion</label>
+        <input type="text" class="form-control" name="descripcion" value="{{producto.descripcion}}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Precio</label>
+        <input type="number" class="form-control" name="precio" step="0.01" value="{{producto.precio}}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Stock</label>
+        <input type="number" class="form-control" name="stock" value="{{producto.stock}}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}
