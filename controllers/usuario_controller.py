@@ -1,5 +1,4 @@
 from flask import request, redirect, url_for, Blueprint
-
 from models.usuario_model import Usuario
 from views import usuario_view
 
