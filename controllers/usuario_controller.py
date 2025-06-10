@@ -8,6 +8,8 @@ usuario_bp =Blueprint('usuario', __name__,url_prefix="/usuarios")
 def index():
     #recupera todo los registros de usuarios
     usuarios = Usuario.get_all()
+    if not usuarios:
+        return usuario_view.list([])
     return usuario_view.list(usuarios)
 
 @usuario_bp.route('/create', methods=['GET', 'POST'])
